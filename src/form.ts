@@ -4,6 +4,7 @@
 
 import { Observable, fromEvent } from 'rxjs';
 import { first, map } from 'rxjs/operators'
+import { QuestionFormat } from './get_questions';
 
 export class FormDriver {
   private cardsBody: Element;
@@ -31,6 +32,7 @@ export class FormDriver {
     submit.appendChild(button);
 
     this.cardsBody.appendChild(clone);
+    answer.querySelector('input')?.focus();
 
     return fromEvent(submit.querySelector('input')!, 'click').pipe(first(), map(() => {
       const name = answer.querySelector('input')?.value || 'unknown';
@@ -45,10 +47,9 @@ export class FormDriver {
     this.cardsBody.append(clone);
   }
 
-  public showNewQuestions(questions: Array<[number, string, number]>) {
+  public showNewQuestions(questions: Array<QuestionFormat>, size: number) {
     // show 45 questions
-    const iterator = new Array(45);
-    for (let i = 0; i < iterator.length; i++) {
+    for (let i = 0; i < size; i++) {
       const clone = this.cardItemTemplate.content.cloneNode(true) as ParentNode;
       const [ question ] = Array.from(clone.querySelectorAll('p')!);
       const [ first, operator, last ] = questions[i];
@@ -57,5 +58,3 @@ export class FormDriver {
     }
   }
 }
-
-

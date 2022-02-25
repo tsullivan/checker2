@@ -2,9 +2,11 @@
  * This program was written by Tim Sullivan
  */
 
+import { QuestionFormat } from './get_questions';
+
 export class GameState {
   private _name?: string;
-  private _questions?: Array<[number, string, number]>;
+  private _questions?: Array<QuestionFormat>;
   private _gameAnswers?: number[];
 
   public set name(name: string) {
@@ -18,7 +20,7 @@ export class GameState {
     return this._name;
   }
 
-  public set questions(questions: Array<[number, string, number]>) {
+  public set questions(questions: Array<QuestionFormat>) {
     this._questions = questions;
   }
 

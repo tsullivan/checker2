@@ -28,8 +28,8 @@ async function main() {
   form.addHello(state.name);
 
   // Make some questions
-  [ state.gameAnswers, state.questions ] = getNewQuestions();
-  form.showNewQuestions(state.questions);
+  [ state.gameAnswers, state.questions ] = getNewQuestions(45);
+  form.showNewQuestions(state.questions, 45);
 
   // Let them save
   //
