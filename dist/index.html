@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The name of this game is Checker Checker.</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+  </head>
+  <body>
+    <div class="cards">
+      <div class="cards__item loading">
+        <p>loading...</p>
+      </div>
+    </div>
+  </body>
+  <template id="cardItemTemplate">
+    <!-- A card with given width -->
+    <div class="cards__item">
+      <p></p>
+      <p><input type="text"/></p>
+      <p></p>
+    </div>
+  </template>
+  <template id="helloTemplate">
+    <!-- A card with given width -->
+    <div class="cards__item">
+      <p>Hello!</p>
+    </div>
+  </template>
+  <script src="bundle.js"></script>
+</html>
