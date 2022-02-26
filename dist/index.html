@@ -11,19 +11,51 @@
       </div>
     </div>
   </body>
-  <template id="cardItemTemplate">
-    <!-- A card with given width -->
+
+  <template id="askNameTemplate">
     <div class="cards__item">
-      <p></p>
-      <p><input type="text"/></p>
-      <p></p>
+      <form>
+        <p>Question 1: What is your name?</p>
+        <p><input type="text" name="answer" /></p>
+        <p><input type="submit" value="Go" /></p>
+      </form>
     </div>
   </template>
+
+  <template id="cardItemTemplate">
+    <div class="cards__item">
+      <div class="inpapa">
+        <!-- Add-on -->
+        <div class="inpapa__addon">
+          <span class="question"></span>
+        </div>
+
+        <!-- Input -->
+        <input type="text" class="inpapa__input" />
+      </div>
+    </div>
+  </template>
+
   <template id="helloTemplate">
-    <!-- A card with given width -->
     <div class="cards__item">
       <p>Hello!</p>
+      <p></p>
     </div>
   </template>
+
+  <template id="saveTemplate">
+    <div class="cards__item">
+      <div class="inpapa">
+        <!-- Add-on -->
+        <div class="inpapa__addon">
+          <form>
+            <input type="submit" value="Save" />
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </template>
+
   <script src="bundle.js"></script>
 </html>

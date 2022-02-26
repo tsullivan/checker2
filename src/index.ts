@@ -25,11 +25,13 @@ async function main() {
 
   // Say hello
   form.clear();
-  form.addHello(state.name);
+  form.addHello(state.name, state.startTime);
 
   // Make some questions
-  [ state.gameAnswers, state.questions ] = getNewQuestions(45);
-  form.showNewQuestions(state.questions, 45);
+  [ state.gameAnswers, state.questions ] = getNewQuestions(46);
+  form.showNewQuestions(state.questions, 46);
+
+  form.addSave();
 
   // Let them save
   //

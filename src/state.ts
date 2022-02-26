@@ -5,9 +5,16 @@
 import { QuestionFormat } from './get_questions';
 
 export class GameState {
+  private _startTime: Date;
+  private _endTime?: Date;
+
   private _name?: string;
   private _questions?: Array<QuestionFormat>;
   private _gameAnswers?: number[];
+
+  constructor() {
+    this._startTime = new Date(Date.now());
+  }
 
   public set name(name: string) {
     this._name = name;
@@ -40,5 +47,18 @@ export class GameState {
       throw new Error('gameAnswers are not set');
     }
     return this._gameAnswers;
+  }
+
+  public get startTime() {
+    return this._startTime;
+  }
+
+  public end() {
+    this._endTime = new Date(Date.now());
+  }
+
+  public scoreSheet() {
+    this._endTime;
+    this._startTime;
   }
 }
